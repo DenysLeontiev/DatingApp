@@ -10,7 +10,7 @@ import { User } from '../_models/user';
 export class AccountService {
   baseUrl:string = 'https://localhost:5001/api/';         //Either null or current User object
   private currentUserSource = new ReplaySubject<User>(1); // Kind of a buffer,next time someone subscribes to it,in our case,this Observable will emit a User(the last User we have there)
-  currentUser$ = this.currentUserSource.asObservable();   // currentUser$ is an observable which holds our user object
+  currentUser$ = this.currentUserSource.asObservable();   // currentUser$ is an observable which holds our UserObject
 
   constructor(private http:HttpClient) { }
 
